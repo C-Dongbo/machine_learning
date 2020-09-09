@@ -17,8 +17,10 @@
 
 
 # Model
-> 활용한 모델은 Matrix Factorization(행렬 인수분해) 기본 모델이고, Learning algorithm은 batch size가 1인 Stochastic gradient descent를 사용하였다. (기존에 일반 gradient descent에 비해 학습속도가 대략 8배 정도 빨라짐)
-> 또한 bias term으로 global_bias, user_latent_bias, item_latent_bias 활용하였다.
+> 활용한 모델은 Matrix Factorization(행렬 인수분해) 기본 모델이고, <br/>
+> Learning algorithm은 batch size가 1인 Stochastic gradient descent를 사용하였다. <br/>
+> (기존에 일반 gradient descent에 비해 학습속도가 대략 8배 정도 빨라짐) <br/>
+> 또한 bias term으로 global_bias, user_latent_bias, item_latent_bias 활용하였다.<br/>
 > 아래 소스에서 global_bias인 b, user_bias인 b_P, item_bias인 b_Q, 그리고 user_latent인 P, item_latent인 Q가 업데이트 되도록 하였다.
 ```
 def get_prediction(self, u, i):
@@ -31,8 +33,8 @@ def get_prediction(self, u, i):
 ```
 python3 main.py --mode train --epochs 10 --k 200 --rating_data_path ./data/ml-20m/ratings.csv --saved_model_path ./model --learning_rate 0.002 --reg_param 0.01
 ```
-> (training timestamp & test timestamp의 default값은 위의 학습, 평가 데이터 기준이며, 변경이 필요하다면 
-> --training_start_timestamp, --training_end_timestamp, --test_start_timestamp, --test_end_timestamp 
+> (training timestamp & test timestamp의 default값은 위의 학습, 평가 데이터 기준이며, 변경이 필요하다면 <br/>
+> --training_start_timestamp, --training_end_timestamp, --test_start_timestamp, --test_end_timestamp <br/>
 > 변수 옵션을 통해 수정 가능)
 
 
