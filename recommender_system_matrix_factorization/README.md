@@ -1,6 +1,6 @@
 ## Matrix Factorization for Recommender system
-* 개요 : 기존 영화 시청 이력 데이터 기반으로 영화 평점을 예측하는 Matrix Factorization 모델을 구현, 데이터는 [Movielens 20m](https://grouplens.org/datasets/movielens/20m/) 데이터를 활용하였고, 데이터 내의 unique한 user수는 138,493이며, movie수는 26,744로 138,493 * 26,744의 matrix를 만들어서 진행하였다.
-*ref. Matrix Factorization Techniques for Recommender Systems* [papaer link](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf)
+* 개요 : 기존 영화 시청 이력 데이터 기반으로 영화 평점을 예측하는 Matrix Factorization 모델을 구현, 데이터는 [Movielens 20m](https://grouplens.org/datasets/movielens/20m/) 데이터를 활용하였고, 데이터 내의 unique한 user수는 138,493이며, movie수는 26,744로 138,493 * 26,744의 matrix를 만들어서 진행하였다.<br/>
+*ref. Matrix Factorization Techniques for Recommender Systems* [paper link](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf)
 
 # Dependencies
 * Python 3.6
