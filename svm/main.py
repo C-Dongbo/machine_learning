@@ -9,9 +9,7 @@ import torch.optim as optim
 
 from sklearn.model_selection import train_test_split
 
-def fit(X, Y, model, args):
-
-    
+def fit(X, Y, model, args):   
 
     X = torch.FloatTensor(X)
     Y = torch.FloatTensor(y)
@@ -28,8 +26,8 @@ def fit(X, Y, model, args):
         sum_loss = 0
 
         for i in range(0, N, args.batchsize):
-            x = X[perm[i : i + args.batchsize]].to(args.device)
-            y = Y[perm[i : i + args.batchsize]].to(args.device)
+            x = X_train[perm[i : i + args.batchsize]].to(args.device)
+            y = y_train[perm[i : i + args.batchsize]].to(args.device)
 
             optimizer.zero_grad()
             output = model(x).squeeze()
