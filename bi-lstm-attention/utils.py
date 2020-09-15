@@ -1,11 +1,14 @@
 import re
+from konlpy.tag import Okt
 
+okt = Okt()
 
 def get_data(f):
   sents, labels =[], []
   for line in f.readlines():
     line = re.sub('\n', '', line)
     _, sent, label = line.split('\t')
+    morph_sent = ' '.join(okt.morphs(sent))
     sents.append(sent)
     labels.append(label)
   return sents, labels
@@ -34,3 +37,14 @@ def make_vocab(train_sentences, min_count = 1):
 
   return vocab_set
 
+def read_vocab():
+  vocab_set = set()
+  lines = open('./data/vocab.txt', 'r', encoding='utf8').readlines()
+  for line in lines:
+    line = re.sub('\n', '', line)
+    vocab_set.add(line)
+  return vocab_set
+
+
+if __name__ == '__main__':
+  print(okt.morphs('아버지가 방에 들어 가신다.'))

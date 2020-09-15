@@ -1,0 +1,427 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff9dbafe228, pid=40652, tid=0x0000000000006238
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_241-b07) (build 1.8.0_241-b07)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.241-b07 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [_jpype.cp36-win_amd64.pyd+0x2e228]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001f702a72800):  JavaThread "main" [_thread_in_native, id=25144, stack(0x00000049dd400000,0x00000049dd5f0000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x0000000000000000
+
+Registers:
+RAX=0x0000000000000000, RBX=0x0000000000000000, RCX=0x000001f7004cf920, RDX=0x0000000000000000
+RSP=0x00000049dd5da8b0, RBP=0x00000049dd5dd040, RSI=0x000001f70071e4e0, RDI=0x0000000067d40670
+R8 =0x0000000000000004, R9 =0x000001f702a67f30, R10=0x000001f7148a9a28, R11=0x00000049dd5da8a0
+R12=0x00000049dd5dbdb8, R13=0x00007ff9dbb41cc8, R14=0x000001f7189d9460, R15=0x00000049dd5ded40
+RIP=0x00007ff9dbafe228, EFLAGS=0x0000000000010246
+
+Top of Stack: (sp=0x00000049dd5da8b0)
+0x00000049dd5da8b0:   0000000000000000 0000000000000000
+0x00000049dd5da8c0:   000001f70071e4e0 0000000067d40670
+0x00000049dd5da8d0:   fffffffffffffffe 0000000067a8ad0b
+0x00000049dd5da8e0:   0000000067d40670 0000000000000000
+0x00000049dd5da8f0:   000001f70071e4e0 000001f702a729f8
+0x00000049dd5da900:   000001f700710100 0000000067d40670
+0x00000049dd5da910:   0000000000000000 000001f71e07d208
+0x00000049dd5da920:   0000b1c2d002b001 00000000146e3158
+0x00000049dd5da930:   00000049dd5daab8 00007ff9dbafd60a
+0x00000049dd5da940:   000001f702a729f8 000001f702a729f8
+0x00000049dd5da950:   000001f7014a2460 000001f70071e4e0
+0x00000049dd5da960:   000000001474e1f8 000001f7014a2460
+0x00000049dd5da970:   000001f70071e4e0 000001f702a729f8
+0x00000049dd5da980:   00000000146f0000 00007ffa2789b1cb
+0x00000049dd5da990:   fffffffffffffffe 00007ffa2a613550
+0x00000049dd5da9a0:   00007ff9dbb41cc8 0000000a656e6f4e 
+
+Instructions: (pc=0x00007ff9dbafe228)
+0x00007ff9dbafe208:   08 01 00 00 48 ff 07 4c 8d 0d ba dd 00 00 4c 8b
+0x00007ff9dbafe218:   c7 49 8b d6 e8 8f db 00 00 48 8b 8e 08 01 00 00
+0x00007ff9dbafe228:   48 ff 03 4c 8d 0d 9e dd 00 00 4c 8b c3 49 8b d6
+0x00007ff9dbafe238:   e8 73 db 00 00 c6 44 24 70 00 48 8b 4c 24 48 48 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x0000000000000000 is an unknown value
+RCX=0x000001f7004cf920 is an unknown value
+RDX=0x0000000000000000 is an unknown value
+RSP=0x00000049dd5da8b0 is pointing into the stack for thread: 0x000001f702a72800
+RBP=0x00000049dd5dd040 is pointing into the stack for thread: 0x000001f702a72800
+RSI=0x000001f70071e4e0 is an unknown value
+RDI=0x0000000067d40670 is an unknown value
+R8 =0x0000000000000004 is an unknown value
+R9 =0x000001f702a67f30 is an unknown value
+R10={method} {0x000001f7148a9a30} 'registerRef' '(Ljava/lang/Object;JJ)V' in 'org/jpype/ref/JPypeReferenceQueue'
+R11=0x00000049dd5da8a0 is pointing into the stack for thread: 0x000001f702a72800
+R12=0x00000049dd5dbdb8 is pointing into the stack for thread: 0x000001f702a72800
+R13=0x00007ff9dbb41cc8 is an unknown value
+R14=0x000001f7189d9460 is an unknown value
+R15=0x00000049dd5ded40 is pointing into the stack for thread: 0x000001f702a72800
+
+
+Stack: [0x00000049dd400000,0x00000049dd5f0000],  sp=0x00000049dd5da8b0,  free space=1898k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [_jpype.cp36-win_amd64.pyd+0x2e228]
+C  [_jpype.cp36-win_amd64.pyd+0x2d60a]
+C  [_jpype.cp36-win_amd64.pyd+0x5faf9]
+C  [VCRUNTIME140.dll+0xc220]
+C  [VCRUNTIME140.dll+0x29b2]
+C  [ntdll.dll+0xa0616]
+C  [_jpype.cp36-win_amd64.pyd+0x42b4b]
+C  [_jpype.cp36-win_amd64.pyd+0x5facd]
+C  [VCRUNTIME140.dll+0xc220]
+C  [VCRUNTIME140.dll+0x29b2]
+C  [ntdll.dll+0xa0616]
+C  [_jpype.cp36-win_amd64.pyd+0x42ae2]
+C  0x000001f702b89f2e
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.jpype.manager.TypeFactoryNative.newWrapper(JJ)V+0
+j  org.jpype.JPypeContext.newWrapper(J)V+16
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000001f717007800 JavaThread "Python Reference Queue" daemon [_thread_blocked, id=25252, stack(0x00000049e0e20000,0x00000049e1010000)]
+  0x000001f716c3b000 JavaThread "Service Thread" daemon [_thread_blocked, id=23320, stack(0x00000049e0a40000,0x00000049e0c30000)]
+  0x000001f716c02800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=39072, stack(0x00000049e0850000,0x00000049e0a40000)]
+  0x000001f716bfc800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=40696, stack(0x00000049e0660000,0x00000049e0850000)]
+  0x000001f716b9b000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=18836, stack(0x00000049e0470000,0x00000049e0660000)]
+  0x000001f716b99800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=10472, stack(0x00000049e0280000,0x00000049e0470000)]
+  0x000001f716b99000 JavaThread "Attach Listener" daemon [_thread_blocked, id=38296, stack(0x00000049e0090000,0x00000049e0280000)]
+  0x000001f716b97000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=37652, stack(0x00000049dfea0000,0x00000049e0090000)]
+  0x000001f716b80800 JavaThread "Finalizer" daemon [_thread_blocked, id=35944, stack(0x00000049dfcb0000,0x00000049dfea0000)]
+  0x000001f714e8d000 JavaThread "Reference Handler" daemon [_thread_blocked, id=22636, stack(0x00000049dfac0000,0x00000049dfcb0000)]
+=>0x000001f702a72800 JavaThread "main" [_thread_in_native, id=25144, stack(0x00000049dd400000,0x00000049dd5f0000)]
+
+Other Threads:
+  0x000001f714e89000 VMThread [stack: 0x00000049df8d0000,0x00000049dfac0000] [id=42028]
+  0x000001f716c3f000 WatcherThread [stack: 0x00000049e0c30000,0x00000049e0e20000] [id=37992]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 43008K, used 13335K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 42496K, 31% used [0x00000000eab00000,0x00000000eb7dddd0,0x00000000ed480000)
+  from space 512K, 31% used [0x00000000f2f00000,0x00000000f2f28000,0x00000000f2f80000)
+  to   space 512K, 0% used [0x00000000f2f80000,0x00000000f2f80000,0x00000000f3000000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14180K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2091K, capacity 2249K, committed 2304K, reserved 1048576K
+
+Card table byte_map: [0x000001f711f30000,0x000001f712140000] byte_map_base: 0x000001f711930000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006862be30
+ Begin Bits: [0x000001f7122a0000, 0x000001f7132a0000)
+ End Bits:   [0x000001f7132a0000, 0x000001f7142a0000)
+
+Polling page: 0x000001f7029a0000
+
+CodeCache: size=245760Kb used=9004Kb max_used=11638Kb free=236755Kb
+ bounds [0x000001f702b70000, 0x000001f703730000, 0x000001f711b70000]
+ total_blobs=3103 nmethods=2732 adapters=282
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 159.619 Thread 0x000001f716c02800 3687       3       scala.collection.immutable.StringOps::head (5 bytes)
+Event: 159.620 Thread 0x000001f716c02800 nmethod 3687 0x000001f70328ccd0 code [0x000001f70328cf20, 0x000001f70328dd50]
+Event: 159.620 Thread 0x000001f716c02800 3688       3       scala.collection.IndexedSeqOptimized::head$ (5 bytes)
+Event: 159.620 Thread 0x000001f716c02800 nmethod 3688 0x000001f703646f90 code [0x000001f703647120, 0x000001f703647530]
+Event: 159.620 Thread 0x000001f716c02800 3689       3       scala.collection.IndexedSeqOptimized::head (24 bytes)
+Event: 159.620 Thread 0x000001f716c02800 nmethod 3689 0x000001f702dc4010 code [0x000001f702dc41a0, 0x000001f702dc4570]
+Event: 159.620 Thread 0x000001f716c02800 3690       3       scala.collection.immutable.StringOps::isEmpty (5 bytes)
+Event: 159.621 Thread 0x000001f716c02800 nmethod 3690 0x000001f703464b90 code [0x000001f703464d20, 0x000001f703465258]
+Event: 159.641 Thread 0x000001f716bfc800 3691       4       org.openkoreantext.processor.tokenizer.ParsedChunk::$anonfun$josaMismatched$1 (410 bytes)
+Event: 159.699 Thread 0x000001f716bfc800 nmethod 3691 0x000001f702cc4150 code [0x000001f702cc44c0, 0x000001f702cc5ee8]
+
+GC Heap History (10 events):
+Event: 187.155 GC heap before
+{Heap before GC invocations=1428 (full 13):
+ PSYoungGen      total 45568K, used 45312K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 45056K, 100% used [0x00000000eab00000,0x00000000ed700000,0x00000000ed700000)
+  from space 512K, 50% used [0x00000000f2f80000,0x00000000f2fc0000,0x00000000f3000000)
+  to   space 512K, 0% used [0x00000000f2f00000,0x00000000f2f00000,0x00000000f2f80000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+Event: 187.156 GC heap after
+Heap after GC invocations=1428 (full 13):
+ PSYoungGen      total 45056K, used 192K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 44544K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ed680000)
+  from space 512K, 37% used [0x00000000f2f00000,0x00000000f2f30000,0x00000000f2f80000)
+  to   space 512K, 0% used [0x00000000f2f80000,0x00000000f2f80000,0x00000000f3000000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+}
+Event: 187.316 GC heap before
+{Heap before GC invocations=1429 (full 13):
+ PSYoungGen      total 45056K, used 44736K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 44544K, 100% used [0x00000000eab00000,0x00000000ed680000,0x00000000ed680000)
+  from space 512K, 37% used [0x00000000f2f00000,0x00000000f2f30000,0x00000000f2f80000)
+  to   space 512K, 0% used [0x00000000f2f80000,0x00000000f2f80000,0x00000000f3000000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+Event: 187.318 GC heap after
+Heap after GC invocations=1429 (full 13):
+ PSYoungGen      total 44544K, used 128K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 44032K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ed600000)
+  from space 512K, 25% used [0x00000000f2f80000,0x00000000f2fa0000,0x00000000f3000000)
+  to   space 512K, 0% used [0x00000000f2f00000,0x00000000f2f00000,0x00000000f2f80000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+}
+Event: 187.487 GC heap before
+{Heap before GC invocations=1430 (full 13):
+ PSYoungGen      total 44544K, used 44160K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 44032K, 100% used [0x00000000eab00000,0x00000000ed600000,0x00000000ed600000)
+  from space 512K, 25% used [0x00000000f2f80000,0x00000000f2fa0000,0x00000000f3000000)
+  to   space 512K, 0% used [0x00000000f2f00000,0x00000000f2f00000,0x00000000f2f80000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+Event: 187.489 GC heap after
+Heap after GC invocations=1430 (full 13):
+ PSYoungGen      total 44032K, used 128K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 43520K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ed580000)
+  from space 512K, 25% used [0x00000000f2f00000,0x00000000f2f20000,0x00000000f2f80000)
+  to   space 512K, 0% used [0x00000000f2f80000,0x00000000f2f80000,0x00000000f3000000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+}
+Event: 187.801 GC heap before
+{Heap before GC invocations=1431 (full 13):
+ PSYoungGen      total 44032K, used 43647K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 43520K, 99% used [0x00000000eab00000,0x00000000ed57fff8,0x00000000ed580000)
+  from space 512K, 25% used [0x00000000f2f00000,0x00000000f2f20000,0x00000000f2f80000)
+  to   space 512K, 0% used [0x00000000f2f80000,0x00000000f2f80000,0x00000000f3000000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+Event: 187.804 GC heap after
+Heap after GC invocations=1431 (full 13):
+ PSYoungGen      total 43520K, used 160K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 43008K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ed500000)
+  from space 512K, 31% used [0x00000000f2f80000,0x00000000f2fa8000,0x00000000f3000000)
+  to   space 512K, 0% used [0x00000000f2f00000,0x00000000f2f00000,0x00000000f2f80000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+}
+Event: 188.123 GC heap before
+{Heap before GC invocations=1432 (full 13):
+ PSYoungGen      total 43520K, used 43168K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 43008K, 100% used [0x00000000eab00000,0x00000000ed500000,0x00000000ed500000)
+  from space 512K, 31% used [0x00000000f2f80000,0x00000000f2fa8000,0x00000000f3000000)
+  to   space 512K, 0% used [0x00000000f2f00000,0x00000000f2f00000,0x00000000f2f80000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+Event: 188.125 GC heap after
+Heap after GC invocations=1432 (full 13):
+ PSYoungGen      total 43008K, used 160K [0x00000000eab00000, 0x00000000f3000000, 0x0000000100000000)
+  eden space 42496K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ed480000)
+  from space 512K, 31% used [0x00000000f2f00000,0x00000000f2f28000,0x00000000f2f80000)
+  to   space 512K, 0% used [0x00000000f2f80000,0x00000000f2f80000,0x00000000f3000000)
+ ParOldGen       total 173568K, used 75351K [0x00000000c0000000, 0x00000000ca980000, 0x00000000eab00000)
+  object space 173568K, 43% used [0x00000000c0000000,0x00000000c4995d18,0x00000000ca980000)
+ Metaspace       used 14175K, capacity 14772K, committed 14848K, reserved 1062912K
+  class space    used 2089K, capacity 2249K, committed 2304K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 82.376 Thread 0x000001f702a72800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f7031c2474 method=java.util.TimSort.mergeLo(IIII)V @ 487
+Event: 84.488 Thread 0x000001f702a72800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f702f761c4 method=java.util.regex.Pattern$Ques.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 42
+Event: 102.370 Thread 0x000001f702a72800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f7033dde84 method=java.util.regex.Pattern$Ques.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 55
+Event: 115.052 Thread 0x000001f702a72800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f7033dde84 method=java.util.regex.Pattern$Ques.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 55
+Event: 120.290 Thread 0x000001f702a72800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f70366b244 method=scala.collection.immutable.HashMap$HashTrieMap.get0(Ljava/lang/Object;II)Lscala/Option; @ 28
+Event: 133.481 Thread 0x000001f702a72800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f7035859c4 method=java.util.TimSort.sort([Ljava/lang/Object;IILjava/util/Comparator;[Ljava/lang/Object;II)V @ 114
+Event: 146.612 Thread 0x000001f702a72800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f703094c08 method=org.openkoreantext.processor.tokenizer.KoreanChunker$.splitBySpaceKeepingSpace(Ljava/lang/CharSequence;)Lscala/collection/Seq; @ 123
+Event: 159.615 Thread 0x000001f702a72800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f703003a98 method=org.openkoreantext.processor.tokenizer.ParsedChunk.$anonfun$josaMismatched$1(Lscala/collection/Seq;)Z @ 322
+Event: 174.768 Thread 0x000001f702a72800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f70366b244 method=scala.collection.immutable.HashMap$HashTrieMap.get0(Ljava/lang/Object;II)Lscala/Option; @ 28
+Event: 188.265 Thread 0x000001f702a72800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f70368e1d4 method=org.jpype.manager.TypeManager.findClassForObject(Ljava/lang/Object;)J @ 8
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 4.650 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$count$1$adapted(Lscala/Function1;Lscala/runtime/IntRef;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000ee567d10) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk
+Event: 4.674 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$sliding$1(Lscala/collection/IterableLike;Lscala/collection/Seq;)Ljava/lang/Object;> (0x00000000ee5cd820) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u241\331\
+Event: 4.681 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$sum$1(Lscala/math/Numeric;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000ee618758) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u241\331\h
+Event: 5.035 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$distinct$1(Lscala/collection/mutable/Builder;Lscala/collection/mutable/HashSet;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000eb94f1a0) thrown at [C:\ade\jenkins\workspace\8-2-build-
+Event: 5.055 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$releaseVersion$1$adapted(Ljava/lang/String;)Ljava/lang/Object;> (0x00000000eba0a0d8) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u241\331\hotspot\src\share\vm
+Event: 5.056 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$releaseVersion$2(Ljava/lang/String;)Ljava/lang/String;> (0x00000000eba14f28) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u241\331\hotspot\src\share\vm\interpr
+Event: 5.057 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$developmentVersion$1$adapted(Ljava/lang/String;)Ljava/lang/Object;> (0x00000000eba190c0) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u241\331\hotspot\src\shar
+Event: 5.057 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$developmentVersion$2(Lscala/util/PropertiesTrait;Ljava/lang/String;)Lscala/Option;> (0x00000000eba1ce88) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u241\331\
+Event: 6.090 Thread 0x000001f702a72800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.$anonfun$addString$1(Lscala/collection/mutable/StringBuilder;Ljava/lang/String;Lscala/runtime/BooleanRef;Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000f98a6f60) thrown at [C:\ade\jenkins\wor
+Event: 188.265 Thread 0x000001f702a72800 Exception <a 'java/lang/InterruptedException': sleep interrupted> (0x00000000eb7283d8) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-amd64-cygwin\jdk8u241\331\hotspot\src\share\vm\prims\jvm.cpp, line 3288]
+
+Events (10 events):
+Event: 188.256 loading class sun/misc/Signal$1 done
+Event: 188.257 Thread 0x000001f71d0a0800 Thread added: 0x000001f71d0a0800
+Event: 188.260 Executing VM operation: RevokeBias
+Event: 188.260 Executing VM operation: RevokeBias done
+Event: 188.260 Thread 0x000001f71d0a0800 Thread exited: 0x000001f71d0a0800
+Event: 188.265 Thread 0x000001f702a72800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000001f70368e1d4
+Event: 188.265 Thread 0x000001f702a72800 DEOPT PACKING pc=0x000001f70368e1d4 sp=0x00000049dd5ee210
+Event: 188.265 Thread 0x000001f702a72800 DEOPT UNPACKING pc=0x000001f702bb5843 sp=0x00000049dd5ee248 mode 2
+Event: 188.267 loading class org/jpype/ref/JPypeReferenceSet$Pool
+Event: 188.267 loading class org/jpype/ref/JPypeReferenceSet$Pool done
+
+
+Dynamic libraries:
+0x000000001c7a0000 - 0x000000001c7bb000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\python.exe
+0x00007ffa2a5c0000 - 0x00007ffa2a7b0000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffa2a390000 - 0x00007ffa2a442000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffa27870000 - 0x00007ffa27b15000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffa28570000 - 0x00007ffa2866a000 	C:\Windows\System32\ucrtbase.dll
+0x0000000067a60000 - 0x0000000067e00000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\python36.dll
+0x00007ffa1fee0000 - 0x00007ffa1fef7000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\VCRUNTIME140.dll
+0x00007ffa29a70000 - 0x00007ffa29ac2000 	C:\Windows\System32\SHLWAPI.dll
+0x00007ffa29070000 - 0x00007ffa2910e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffa294b0000 - 0x00007ffa297e5000 	C:\Windows\System32\combase.dll
+0x00007ffa286f0000 - 0x00007ffa28810000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffa27b20000 - 0x00007ffa27ba0000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffa28fd0000 - 0x00007ffa28ff6000 	C:\Windows\System32\GDI32.dll
+0x00007ffa21a20000 - 0x00007ffa21a2a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffa27bf0000 - 0x00007ffa27c11000 	C:\Windows\System32\win32u.dll
+0x00007ffa275f0000 - 0x00007ffa27786000 	C:\Windows\System32\gdi32full.dll
+0x00007ffa27550000 - 0x00007ffa275ee000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffa297f0000 - 0x00007ffa29985000 	C:\Windows\System32\USER32.dll
+0x00007ffa291b0000 - 0x00007ffa2921f000 	C:\Windows\System32\WS2_32.dll
+0x00007ffa28f20000 - 0x00007ffa28fc3000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffa29220000 - 0x00007ffa292b7000 	C:\Windows\System32\sechost.dll
+0x00007ffa29180000 - 0x00007ffa291ae000 	C:\Windows\System32\IMM32.DLL
+0x00007ffa27dd0000 - 0x00007ffa27de7000 	C:\Windows\System32\CRYPTSP.dll
+0x00007ffa267a0000 - 0x00007ffa267d3000 	C:\Windows\system32\rsaenh.dll
+0x00007ffa27840000 - 0x00007ffa27866000 	C:\Windows\System32\bcrypt.dll
+0x00007ffa26da0000 - 0x00007ffa26dac000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x00007ffa1fed0000 - 0x00007ffa1fedf000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\python3.dll
+0x000000006a120000 - 0x000000006a143000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\_ctypes.pyd
+0x00007ffa2a230000 - 0x00007ffa2a387000 	C:\Windows\System32\ole32.dll
+0x00007ffa29990000 - 0x00007ffa29a55000 	C:\Windows\System32\OLEAUT32.dll
+0x000000006df40000 - 0x000000006fbc8000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\.libs\libopenblas.PYQHXLVVQ7VESDPUVUADXEVJOBGHJPAY.gfortran-win_amd64.dll
+0x00007ff9dc6d0000 - 0x00007ff9dc987000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\core\_multiarray_umath.cp36-win_amd64.pyd
+0x00007ffa13900000 - 0x00007ffa1391f000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\core\_multiarray_tests.cp36-win_amd64.pyd
+0x00007ffa1fec0000 - 0x00007ffa1fecb000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\linalg\lapack_lite.cp36-win_amd64.pyd
+0x00007ffa0ea60000 - 0x00007ffa0ea86000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\linalg\_umath_linalg.cp36-win_amd64.pyd
+0x0000000069740000 - 0x0000000069758000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\_bz2.pyd
+0x00007ffa04a80000 - 0x00007ffa04ac1000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\_lzma.pyd
+0x00000000696f0000 - 0x0000000069734000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\_decimal.pyd
+0x00007ffa12fa0000 - 0x00007ffa12fc0000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\fft\_pocketfft_internal.cp36-win_amd64.pyd
+0x00007ff9deb40000 - 0x00007ff9debd1000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\mtrand.cp36-win_amd64.pyd
+0x00007ffa0e9c0000 - 0x00007ffa0e9eb000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\_bit_generator.cp36-win_amd64.pyd
+0x00007ffa012c0000 - 0x00007ffa012f0000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\_common.cp36-win_amd64.pyd
+0x00007ff9c88a0000 - 0x00007ff9c8a41000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\_hashlib.pyd
+0x00007ff9ff1f0000 - 0x00007ff9ff23a000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\_bounded_integers.cp36-win_amd64.pyd
+0x00007ffa012a0000 - 0x00007ffa012bd000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\_mt19937.cp36-win_amd64.pyd
+0x00007ffa01210000 - 0x00007ffa01228000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\_philox.cp36-win_amd64.pyd
+0x00007ffa011d0000 - 0x00007ffa011e6000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\_pcg64.cp36-win_amd64.pyd
+0x00007ff9ff740000 - 0x00007ff9ff753000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\_sfc64.cp36-win_amd64.pyd
+0x00007ff9dcc80000 - 0x00007ff9dcd25000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\random\_generator.cp36-win_amd64.pyd
+0x00000000696d0000 - 0x00000000696e4000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\_socket.pyd
+0x000000006a110000 - 0x000000006a119000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\select.pyd
+0x00007ffa13380000 - 0x00007ffa13387000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\torch\_C.cp36-win_amd64.pyd
+0x00007ff99de60000 - 0x00007ff99e487000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\torch\lib\torch_python.dll
+0x00007ffa118f0000 - 0x00007ffa118f9000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\torch\lib\shm.dll
+0x00007ff9929f0000 - 0x00007ff9935aa000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\torch\lib\torch.dll
+0x00007ffa1b030000 - 0x00007ffa1b0c1000 	C:\Windows\SYSTEM32\MSVCP140.dll
+0x00007ff9f2830000 - 0x00007ff9f2865000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\torch\lib\c10.dll
+0x00007ff98ace0000 - 0x00007ff9929e4000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\torch\lib\caffe2.dll
+0x00007ffa1b020000 - 0x00007ffa1b02c000 	C:\Windows\SYSTEM32\VCRUNTIME140_1.dll
+0x00007ff9c1050000 - 0x00007ff9c1223000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\torch\lib\libiomp5md.dll
+0x00000000696c0000 - 0x00000000696ca000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\_multiprocessing.pyd
+0x00007ff9a19c0000 - 0x00007ff9a1bd0000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\_ssl.pyd
+0x00007ffa27c20000 - 0x00007ffa27d69000 	C:\Windows\System32\CRYPT32.dll
+0x00007ffa27490000 - 0x00007ffa274a2000 	C:\Windows\System32\MSASN1.dll
+0x00007ff9dbad0000 - 0x00007ff9dbb8c000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\_jpype.cp36-win_amd64.pyd
+0x00007ffa26c20000 - 0x00007ffa26c87000 	C:\Windows\system32\mswsock.dll
+0x0000000067860000 - 0x000000006793f000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\DLLs\unicodedata.pyd
+0x00007ff99fc60000 - 0x00007ff9a0020000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\lxml\etree.cp36-win_amd64.pyd
+0x00007ff9f2bb0000 - 0x00007ff9f2bd9000 	C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\lxml\_elementpath.cp36-win_amd64.pyd
+0x0000000067e00000 - 0x00000000686ac000 	C:\Program Files\Java\jdk1.8.0_241\jre\bin\server\jvm.dll
+0x00007ffa29a60000 - 0x00007ffa29a68000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffa1cf10000 - 0x00007ffa1cf34000 	C:\Windows\SYSTEM32\WINMM.dll
+0x000000006a150000 - 0x000000006a222000 	C:\Windows\SYSTEM32\MSVCR100.dll
+0x00007ff9e01c0000 - 0x00007ff9e01c9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffa1cee0000 - 0x00007ffa1cf0d000 	C:\Windows\SYSTEM32\winmmbase.dll
+0x00007ffa27ba0000 - 0x00007ffa27bea000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffa20510000 - 0x00007ffa2051f000 	C:\Program Files\Java\jdk1.8.0_241\jre\bin\verify.dll
+0x00007ffa13a70000 - 0x00007ffa13a99000 	C:\Program Files\Java\jdk1.8.0_241\jre\bin\java.dll
+0x00007ffa13a50000 - 0x00007ffa13a66000 	C:\Program Files\Java\jdk1.8.0_241\jre\bin\zip.dll
+0x00007ffa28810000 - 0x00007ffa28ef7000 	C:\Windows\System32\SHELL32.dll
+0x00007ffa2a4d0000 - 0x00007ffa2a579000 	C:\Windows\System32\shcore.dll
+0x00007ffa27df0000 - 0x00007ffa28570000 	C:\Windows\System32\windows.storage.dll
+0x00007ffa27500000 - 0x00007ffa27523000 	C:\Windows\System32\profapi.dll
+0x00007ffa274b0000 - 0x00007ffa274fa000 	C:\Windows\System32\powrprof.dll
+0x00007ffa27480000 - 0x00007ffa27490000 	C:\Windows\System32\UMPDC.dll
+0x00007ffa27530000 - 0x00007ffa27541000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffa13a30000 - 0x00007ffa13a4a000 	C:\Program Files\Java\jdk1.8.0_241\jre\bin\net.dll
+0x00007ffa13a10000 - 0x00007ffa13a22000 	C:\Program Files\Java\jdk1.8.0_241\jre\bin\nio.dll
+0x00007ffa25ba0000 - 0x00007ffa25d94000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+java_command: <unknown>
+java_class_path (initial): C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\bin;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\*;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\jhannanum-0.8.4.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\kkma-2.0.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\aho-corasick.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\shineware-common-1.0.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\shineware-ds-1.0.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\komoran-3.0.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\snakeyaml-1.12.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\scala-library-2.12.3.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\open-korean-text-2.1.0.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\twitter-text-1.14.7.jar;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\konlpy\java\*
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_241
+CLASSPATH=C:\Program Files\Java\jdk1.8.0_241\lib
+PATH=C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\torch\lib\;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\Library\bin;;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Java\jdk1.8.0_241\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Java\apache-maven-3.6.3\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\;C:\Users\saltlux\AppData\Local\Microsoft\WindowsApps;;C:\Users\saltlux\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Bandizip\;C:\Users\saltlux\AppData\Local\Programs\EmEditor;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\pywin32_system32;C:\Users\saltlux\AppData\Local\Programs\Python\Python36\lib\site-packages\numpy\.libs
+USERNAME=saltlux
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.1082)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16566304k(3104876k free), swap 34392096k(12720160k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.241-b07) for windows-amd64 JRE (1.8.0_241-b07), built on Dec 11 2019 10:21:40 by "rejava" with MS VC++ 10.0 (VS2010)
+
+time: Tue Sep 15 13:06:21 2020
+timezone: 대한민국 표준시
+elapsed time: 189 seconds (0d 0h 3m 9s)
+

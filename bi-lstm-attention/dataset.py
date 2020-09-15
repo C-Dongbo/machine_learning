@@ -7,7 +7,7 @@ import numpy as np
 from torch.utils.data import Dataset
 import torch
 import random
-from utils import get_data, make_vocab
+from utils import get_data, make_vocab, read_vocab
 
 
 class SentenceClassificationDataset(Dataset):
@@ -18,18 +18,22 @@ class SentenceClassificationDataset(Dataset):
         """
         self.dataset_path = dataset_path
 
-        with open(os.path.join(dataset_path,'train_data'),'r',encoding='utf8') as f:
+        with open(os.path.join(dataset_path,'sample_data'),'r',encoding='utf8') as f:
           self.train_sentences , self.train_labels = get_data(f)
           
         with open(os.path.join(dataset_path,'test_data'),'r',encoding='utf8') as f:
-          self.test_sentences , self.test_labels = get_data(f)
-                
+          self.test_sentences , self.test_labels = get_data(f)        
+        print('data loading complete!')
 
-        self.vocab = make_vocab(self.train_sentences)
+        if os.path.isfile('./data/vocab.txt'):
+            self.vocab = read_vocab()
+        else:
+            self.vocab = make_vocab(self.train_sentences)
 
-        self.sentences = preprocess(self.vocab, self.train_data_sentences, max_length)
-        self.labels = [np.float32(x) for x in self.train_data_labels]
-
+        print('make vocab complete! vocab size = {}'.format(len(self.vocab)))
+        
+        self.sentences = preprocess(self.vocab, self.train_sentences, max_length)
+        self.labels = [np.float32(x) for x in self.train_labels]
         print('training sentences :', len(self.sentences))
 
     def __len__(self):
@@ -107,8 +111,8 @@ def collate_fn(data: list):
         sentences.append(datum[0])
         label.append(datum[1])
 
-    sent2tensor = torch.tensor(sentences, device='cuda' if torch.cuda.is_available() else 'cpu', dtype=torch.float)
-    label2tensor = torch.tensor(label, device='cuda' if torch.cuda.is_available() else 'cpu', dtype=torch.long)
+    sent2tensor = torch.tensor(sentences, device='cuda' if torch.cuda.is_available() else 'cpu', dtype=torch.long)
+    label2tensor = torch.tensor(label, device='cuda' if torch.cuda.is_available() else 'cpu', dtype=torch.float)
     return sent2tensor, label2tensor
 
 
