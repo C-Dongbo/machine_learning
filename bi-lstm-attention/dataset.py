@@ -55,6 +55,9 @@ class SentenceClassificationDataset(Dataset):
     def get_vocab_size(self):
         return len(self.vocab)
 
+    def get_test_data(self):
+        return self.test_sentences, self.test_labels
+
 def preprocess(vocabs: set, data: list, max_length: int):
     """
     :param data: 문자열 리스트 ([문자열1, 문자열2, ...])
